@@ -3,7 +3,7 @@ const { Pokemon, Type, Op } = require("../../db");
 
 const apiInfo = async () => {
     const dataBase = await Pokemon.findAll();
-    const api = (await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100"))
+    const api = (await axios.get("https://pokeapi.co/api/v2/pokemon?limit=200"))
         .data.results;
     const urls = [];
     api.forEach((element) => {
@@ -64,7 +64,7 @@ const searchUserById = async (id) => {
         id: api.data.id,
         nombre: api.data.name,
         imagen: api.data.sprites.other.dream_world.front_default,
-        tipo: api.data.types.map((el) => el.type.name),
+        tipo: api.data.types.map((el) => el.type.name ),
         vida: api.data.stats[0].base_stat,
         ataque: api.data.stats[1].base_stat,
         defensa: api.data.stats[2].base_stat,

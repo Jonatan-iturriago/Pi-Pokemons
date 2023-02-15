@@ -11,7 +11,7 @@ sequelize.define(
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4,
         },
-        name: {
+        nombre: {
             type: DataTypes.STRING,
             allowNull: false,
         },

@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url("./unnamed.jpg");
+    background-size: cover;
+}
+
+
+.btnpage {
+    margin-top: 30px;
+    padding: 16px 30px;
+    background: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 0;
+    border-radius: 0.4rem;
+    box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btnpage:hover {
+    background: var(--color-primary-500);
+    color: #000;
+}
+
+/* .welcometitle,
+.welcomesubtitle {
+    font-family: 'Lato', sans-serif;
+    background-color: rgba(0, 0, 0, 0.766);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.welcometitle {
+    font-size: 68px;
+}
+
+.welcomesubtitle {
+    font-size: 24px;
+} */

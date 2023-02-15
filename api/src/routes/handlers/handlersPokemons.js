@@ -51,7 +51,7 @@ const getById = async (req, res) => {
 
 const postPokemon = async (req, res) => {
     const {
-        name,
+        nombre,
         vida,
         imagen,
         ataque,
@@ -64,7 +64,7 @@ const postPokemon = async (req, res) => {
     } = req.body;
     try {
         if (
-            !name ||
+            !nombre ||
             !vida ||
             !imagen ||
             !ataque ||
@@ -80,7 +80,7 @@ const postPokemon = async (req, res) => {
             });
         } else {
             let newPokemon = await Pokemon.create({
-                name,
+                nombre,
                 vida,
                 imagen,
                 ataque,
