@@ -4,30 +4,25 @@ const {
     apiInfo,
     searchUserById,
     getByIdDB,
+    getPokemonByName,
 } = require("../controllers/controllersPokemons");
 
 const getAll = async (req, res) => {
-    const info = await apiInfo();
     const { name } = req.query;
-    if (name) {
-        let nombre = info.filter((e) => e.name == name);
-        return res.status(200).json(nombre);
+    console.log(name)
+    
+    try {
+        if (name) {
+            return res.send(await getPokemonByName(name));
+        } else {
+            return res.send(await apiInfo());
+        }
+    } catch (e) {
+        return res.status(404).json({
+            error: "The pokemon you are trying to find does not exist",
+        });
     }
-    res.status(200).json(info);
-
 };
-
-// const getByName = async (req, res) => {
-//     const info = await apiInfo();
-//     const { name } = req.query;
-//     if (name) {
-//         try {
-            
-//         } catch (error) {
-//             res.status(400).json("error el pokemon que busca no existe");
-//         }
-//     }
-// };
 
 const getById = async (req, res) => {
     const { id } = req.params;
@@ -107,5 +102,4 @@ module.exports = {
     getAll,
     getById,
     postPokemon,
-    
 };

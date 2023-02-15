@@ -1,4 +1,4 @@
-import { ALLPOKEMONS, CLEARPOKEMONS,DETALLEPOKEMONS,CLEARDETALLES } from './type'
+import { ALLPOKEMONS, CLEARPOKEMONS,DETALLEPOKEMONS,CLEARDETALLES,SEARCH } from './type'
 import axios from 'axios'
 
 
@@ -16,6 +16,16 @@ export const clear = () => {
         type:CLEARPOKEMONS
     }
 }
+
+export const getPokeByName = (name) => {
+    return async function (dispatch) {
+        const json = await axios.get(`http://localhost:3001/pokemon?name=${name}`);
+        return dispatch({
+            type: SEARCH,
+            payload: json.data,
+        });
+    };
+};
 
 
 export const getPokemondetalle = (id) => {

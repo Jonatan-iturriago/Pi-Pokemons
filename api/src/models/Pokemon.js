@@ -17,7 +17,7 @@ sequelize.define(
         },
         imagen: {
             type: DataTypes.STRING,
-            defaultValue: "https://tinyurl.com/2e5gdnl6",
+            allowNull:false
         },
         vida: {
             type: DataTypes.INTEGER,

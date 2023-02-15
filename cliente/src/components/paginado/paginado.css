@@ -1,0 +1,31 @@
+.paginas {
+    text-align: center;
+    padding: 20px;
+}
+
+.paginas ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0.5px,0.5fr));
+    border-radius: 1px;
+    flex-wrap: wrap;
+    list-style: none;
+    gap : 0.5rem;
+}
+
+.paginas ul li button {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s;
+}
+.paginas ul div button{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.paginas ul li button:hover {
+    color: white;
+    background: black;
+}

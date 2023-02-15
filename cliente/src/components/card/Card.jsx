@@ -11,13 +11,12 @@ return (
             </Link>
             <h2 className={style.titulo}>
                 {tipo?.map((e) => (
-                    <div>
+                    <div key={e}>
                         <span>{e + " "}</span>
                         <br />
                     </div>
                 ))}
             </h2>
-            
         </div>
     </div>
 );

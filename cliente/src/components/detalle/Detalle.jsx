@@ -18,7 +18,7 @@ function Detalle() {
     return (
         <div className={st.gr}>
             <div className={st.card}>
-                <Link to="/">
+                <Link to="/home">
                     <img className={st.imagen} src={close} alt="cerrar" />
                 </Link>
                 <div className={st.details}>
@@ -62,7 +62,7 @@ function Detalle() {
                             <div>
                                 <b>TIPO: </b>
                                 {detalle.tipo?.map((e) => (
-                                    <h2>{" " + e + ""}</h2>
+                                    <h2 key={e}>{" " + e + ""}</h2>
                                 ))}
                             </div>
                         </div>

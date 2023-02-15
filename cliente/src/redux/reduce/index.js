@@ -1,4 +1,4 @@
-import { ALLPOKEMONS, CLEARPOKEMONS, DETALLEPOKEMONS, CLEARDETALLES} from '../action/type'
+import { ALLPOKEMONS, CLEARPOKEMONS, DETALLEPOKEMONS, CLEARDETALLES, SEARCH} from '../action/type'
 
 const inicialstate = {
     pokemons: [],
@@ -26,6 +26,11 @@ export default function reducer(state = inicialstate, { type, payload }) {
             return {
                 ...state,
                 detalle:[]
+            }
+        case SEARCH:
+            return {
+                ...state,
+                pokemons:payload
             }
         default:
             return {

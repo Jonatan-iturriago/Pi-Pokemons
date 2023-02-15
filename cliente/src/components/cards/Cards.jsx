@@ -1,34 +1,52 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemon, clear } from "../../redux/action/index";
+import { getPokemon} from "../../redux/action/index";
 import Card from "../card/Card";
 import style from "./Cards.module.css";
-import NavBar from '../navBar/NavBar'
+import NavBar from "../navBar/NavBar";
+import Paginado from "../paginado/paginado";
+import Search from "../search/Search";
+// import Loading from "../Loading/Loading";
 function Cards() {
     const dispatch = useDispatch();
     const pokemon = useSelector((state) => state.pokemons);
+    const totalPokemon = pokemon.length;
+    const [pokemonPage] = useState(12);
+    const [currentPage, setCurrentPage] = useState(1);
+    const lastIndex = currentPage * pokemonPage;
+    const firstIndex = lastIndex - pokemonPage;
 
     useEffect(() => {
         dispatch(getPokemon());
-        return () => dispatch(clear());
     }, [dispatch]);
 
     return (
         <>
-            <NavBar/>
-        <div className={style.contenido}>
-            {pokemon.map((el) => {
-                return (
-                    <Card
-                    key={el.id}
-                    id={el.id}
-                    nombre={el.nombre}
-                    imagen={el.imagen}
-                    tipo={el.tipo}
-                    />
-                    );
-                })}
-        </div>
+            <NavBar />
+            <Search
+                setCurrentPage={setCurrentPage}
+            />
+            <Paginado
+                pokemonPage={pokemonPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                totalPokemon={totalPokemon}
+            />
+            <div className={style.contenido}>
+                {pokemon
+                    .map((el) => {
+                        return (
+                            <Card
+                                key={el.id}
+                                id={el.id}
+                                nombre={el.nombre}
+                                imagen={el.imagen}
+                                tipo={el.tipo}
+                            />
+                        );
+                    })
+                    .slice(firstIndex, lastIndex)}
+            </div>
         </>
     );
 }
