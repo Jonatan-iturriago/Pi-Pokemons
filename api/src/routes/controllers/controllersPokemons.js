@@ -51,49 +51,50 @@ const apiInfo = async () => {
     return [...data1, ...infapi];
 };
 
-async function getPokemonByName(name) {        
+const getPokemonNameByApi = async (name) => {
+    if (name) {
         const database = await Pokemon.findOne({
-        where: {
-            nombre: name,
-        },
-        include: Type,
-    });
-        // const data1 = {
-        //     id: database.id,
-        //     nombre: database.nombre,
-        //     imagen: database.imagen,
-        //     tipo: database.types.map((el) => el.name),
-        //     vida: database.vida,
-        //     ataque: database.ataque,
-        //     defensa: database.defensa,
-        //     velocidad: database.velocida,
-        //     altura: database.altura,
-        //     peso: database.peso,
-        //     create: database.create,
-        // };
-        
-        if (!database) {
-            const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
-            const p = await axios.get(url);
-            const dataByPokemon = {
-            id: p.data.id,
-            name: p.data.name,
-            height: p.data.height,
-            weight: p.data.weight,
-            types: p.data.types.map((el) => el.type.name),
-            image: p.data.sprites.other["official-artwork"].front_default,
-            life: p.data.stats[0].base_stat,
-            attack: p.data.stats[1].base_stat,
-            defense: p.data.stats[2].base_stat,
-            speed: p.data.stats[3].base_stat,
-        };
-        return [dataByPokemon];
+            where: { nombre: name.toLowerCase().trim() },
+            include: {
+                model: Type,
+                attributes: ["name"],
+                through: {
+                    attributes: [],
+                },
+            },
+        });
+        if (database) return [{
+            id: database.id,
+            nombre: database.nombre,
+            imagen: database.imagen,
+            tipo: database.types.map((el) => el.name),
+            vida: database.vida,
+            ataque: database.ataque,
+            defensa: database.defensa,
+            velocidad: database.velocida,
+            altura: database.altura,
+            peso: database.peso,
+            create: database.create,
+        }];
+
+        const pokemon = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase().trim()}`
+        );
+        const pokeApi = [{
+            id: pokemon.data.id,
+            imagen: pokemon.data.sprites.other["official-artwork"].front_default,
+            nombre: pokemon.data.name,
+            tipo: pokemon.data.types.map((t) => t.type.name),
+            vida: pokemon.data.stats[0].base_stat,
+            ataque: pokemon.data.stats[1].base_stat,
+            defensa: pokemon.data.stats[2].base_stat,
+            velocidad: pokemon.data.stats[5].base_stat,
+            altura: pokemon.data.height,
+            peso: pokemon.data.weight,
+        }];
+        return pokeApi;
     }
-
-    
-    return [database];
-}
-
+};
 const searchUserById = async (id) => {
     const api = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
     return {
@@ -127,7 +128,7 @@ const getByIdDB = async (id) => {
         vida: database.vida,
         ataque: database.ataque,
         defensa: database.defensa,
-        velocidad: database.velocida,
+        velocidad: database.velocidad,
         altura: database.altura,
         peso: database.peso,
         create: database.create,
@@ -139,5 +140,5 @@ module.exports = {
     apiInfo,
     searchUserById,
     getByIdDB,
-    getPokemonByName,
+    getPokemonNameByApi,
 };

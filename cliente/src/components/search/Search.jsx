@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {getPokeByName} from "../../redux/action/index";
+import { getPokeByName } from "../../redux/action/index";
 
-function Search({setCurrentPage}) {
+function Search({ setCurrentPage }) {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -13,16 +13,16 @@ function Search({setCurrentPage}) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(getPokeByName(name.toLocaleLowerCase()));
-        setCurrentPage(1)
+        dispatch(getPokeByName(name));
+        setCurrentPage(1);
     }
-
     return (
         <div>
             <input
                 type="text"
-                placeholder="Buscar Receta...."
+                placeholder="Buscar Personaje...."
                 onChange={(e) => handleChange(e)}
+                value={name}
             />
             <input
                 type="submit"

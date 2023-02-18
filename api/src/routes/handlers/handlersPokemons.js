@@ -4,25 +4,48 @@ const {
     apiInfo,
     searchUserById,
     getByIdDB,
-    getPokemonByName,
+    getPokemonNameByApi,
 } = require("../controllers/controllersPokemons");
 
+// const getAll = async (req, res) => {
+//     try {
+//         return res.send(await apiInfo());
+//     } catch (e) {
+//         return res.status(404).json({
+//             error: "The pokemon you are trying to find does not exist",
+//         });
+//     }
+// };
+
 const getAll = async (req, res) => {
-    const { name } = req.query;
-    console.log(name)
-    
+    const name = req.query.name;
     try {
         if (name) {
-            return res.send(await getPokemonByName(name));
+            res.status(200).send(await getPokemonNameByApi(name));
         } else {
-            return res.send(await apiInfo());
+            return res.status(200).send(await apiInfo());
         }
-    } catch (e) {
-        return res.status(404).json({
-            error: "The pokemon you are trying to find does not exist",
-        });
+    } catch (error) {
+        res.status(404).send(
+            "Sorry, that Pokemon does not exist. Try typing the name again!"
+        );
     }
 };
+
+// const getName = async (req, res) => {
+//     const { name } = req.query;
+//     const infBD = await getPokemonByName(name);
+//     const infoApi = await apibyName(name);
+//     if (name) {
+//         res.status(200).json(infBD)
+//     } else {
+//         if (name) {
+//             res.status(200).json(infoApi);
+//         } else {
+//             res.status(404).json("no se encontro el nombre")
+//         }
+//     }
+// }
 
 const getById = async (req, res) => {
     const { id } = req.params;

@@ -1,4 +1,14 @@
-import { ALLPOKEMONS, CLEARPOKEMONS,DETALLEPOKEMONS,CLEARDETALLES,SEARCH } from './type'
+import {
+    ALLPOKEMONS,
+    CLEARPOKEMONS,
+    DETALLEPOKEMONS,
+    CLEARDETALLES,
+    SEARCH,
+    SHOWLANDING,
+    HIDELANDING,
+    FILTERTIPOS,
+    ALLTYPE,
+} from "./type";
 import axios from 'axios'
 
 
@@ -19,12 +29,19 @@ export const clear = () => {
 
 export const getPokeByName = (name) => {
     return async function (dispatch) {
-        const json = await axios.get(`http://localhost:3001/pokemon?name=${name}`);
-        return dispatch({
-            type: SEARCH,
-            payload: json.data,
-        });
-    };
+        try {
+            const json = await axios.get(
+                `http://localhost:3001/pokemon?name=${name}`
+            );
+            return dispatch({
+                type: SEARCH,
+                payload: json.data,
+            });
+        } catch (error) {
+            alert("el nombre buscado no existe intente con otro");
+        }
+        
+        }
 };
 
 
@@ -42,3 +59,32 @@ export const clearDetalle = () => {
         type: CLEARDETALLES,
     };
 };
+
+export const showLoading = () => (dispatch) => {
+    dispatch({
+        type: SHOWLANDING,
+    });
+};
+
+export const hideLoading = () => (dispatch) => {
+    dispatch({
+        type: HIDELANDING,
+    });
+};
+
+export const getTipoPokemon = () => {
+    return async function (dispatch) {
+        const json = await axios.get("http://localhost:3001/type");
+        return dispatch({
+            type: ALLTYPE,
+            payload: json.data,
+        });
+    };
+};
+
+
+export const filtroTipo = (dispatch) => {
+    dispatch({
+        type: FILTERTIPOS,
+    });
+}

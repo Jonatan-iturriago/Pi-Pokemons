@@ -1,12 +1,16 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux'
+import gif from "./VAyR.gif"
 
 function Loading() {
-return (
-    <div>
-        <h1>"cargando...."</h1>
+    const loading = useSelector((state)=>state.loading)
+    if(!loading) return null
+    return (
+        <div>
+            <img src={gif} alt="CARGANDO..."  />
+
     </div>
-);
+)
 }
 
 export default Loading

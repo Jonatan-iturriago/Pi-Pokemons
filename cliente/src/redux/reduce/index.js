@@ -1,8 +1,13 @@
-import { ALLPOKEMONS, CLEARPOKEMONS, DETALLEPOKEMONS, CLEARDETALLES, SEARCH} from '../action/type'
+import {
+    ALLPOKEMONS, CLEARPOKEMONS, DETALLEPOKEMONS, CLEARDETALLES, SEARCH, HIDELANDING,
+    SHOWLANDING, ALLTYPE
+} from '../action/type'
 
 const inicialstate = {
     pokemons: [],
-    detalle: {}
+    detalle: {},
+    loading: false,
+    tipos:[]
 }
 
 export default function reducer(state = inicialstate, { type, payload }) {
@@ -16,6 +21,16 @@ export default function reducer(state = inicialstate, { type, payload }) {
             return {
                 ...state,
                 pokemons: []
+            }
+        case SHOWLANDING:
+            return {
+                ...state,
+                loading: true
+            }
+        case HIDELANDING:
+            return {
+                ...state,
+                loading: false
             }
         case DETALLEPOKEMONS:
             return {
@@ -31,6 +46,11 @@ export default function reducer(state = inicialstate, { type, payload }) {
             return {
                 ...state,
                 pokemons:payload
+            }
+        case ALLTYPE:
+            return {
+                ...state,
+                tipos:payload
             }
         default:
             return {

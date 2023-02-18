@@ -4,13 +4,11 @@ const {
     getAll,
     getById,
     postPokemon,
-    
-
 } = require("./handlers/handlersPokemons");
 
 
 pokemonRouter.get('/', getAll);
 pokemonRouter.get('/:id', getById);
-pokemonRouter.post('/',postPokemon)
+pokemonRouter.post('/', postPokemon)
 
 module.exports = pokemonRouter;
