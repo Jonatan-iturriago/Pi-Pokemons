@@ -1,21 +1,25 @@
-import React from 'react'
-import  "./paginado.css"
-function Paginado({ pokemonPage, currentPage, setCurrentPage, totalPokemon }) {
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {setCurrentPage} from "../../redux/action/index"
+import "./paginado.css";
+function Paginado({ pokemonPage, totalPokemon }) {
+    const setPage = useSelector((state) => state.setPage);
+    const dispatch = useDispatch()
     const numeroPagina = [];
     for (let i = 1; i <= Math.ceil(totalPokemon / pokemonPage); i++) {
         numeroPagina.push(i);
     }
 
     const nextPage = () => {
-        setCurrentPage(currentPage + 1);
+        dispatch(setCurrentPage(setPage + 1))
     };
 
     const prevPage = () => {
-        setCurrentPage(currentPage - 1);
+        dispatch(setCurrentPage(setPage - 1));
     };
 
     const specifPage = (e) => {
-        setCurrentPage(e);
+        dispatch(setCurrentPage(e));
     };
 
     return (
@@ -25,7 +29,7 @@ function Paginado({ pokemonPage, currentPage, setCurrentPage, totalPokemon }) {
                     <ul>
                         <div>
                             <button
-                                disabled={currentPage === 1 ? true : false}
+                                disabled={setPage === 1 ? true : false}
                                 onClick={prevPage}
                             >
                                 Previous
@@ -41,7 +45,7 @@ function Paginado({ pokemonPage, currentPage, setCurrentPage, totalPokemon }) {
                         <div>
                             <button
                                 disabled={
-                                    currentPage >= numeroPagina.length
+                                    setPage >= numeroPagina.length
                                         ? true
                                         : false
                                 }

@@ -110,7 +110,7 @@ const postPokemon = async (req, res) => {
             });
             let tiposBD = await Type.findAll({
                 where: {
-                    id: tipo,
+                    name: tipo,
                 },
             });
             newPokemon.addType(tiposBD);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getPokeByName } from "../../redux/action/index";
+import { getPokeByName,setCurrentPage,resetFiltros} from "../../redux/action/index";
 
-function Search({ setCurrentPage }) {
+function Search() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
@@ -14,7 +14,8 @@ function Search({ setCurrentPage }) {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(getPokeByName(name));
-        setCurrentPage(1);
+        dispatch(setCurrentPage(1))
+        dispatch(resetFiltros())
     }
     return (
         <div>

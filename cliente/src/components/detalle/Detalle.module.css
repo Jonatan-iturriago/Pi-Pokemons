@@ -21,7 +21,7 @@
 .card button {
     transform: translatex(222px) translatey(0px);
     position: relative;
-    top: 4px;
+    top: 2px;
     left: -4px;
     bottom: 12px;
     right: -4px;
@@ -62,7 +62,7 @@
 
 .texto div h2 {
     position: relative;
-    top: -4px;
+    top: -53px;
     left: 156px;
     width: 66%;
     height: 54px;
@@ -72,7 +72,7 @@
 .texto div b {
     position: relative;
     left: -148px;
-    top: 25px;
+    top: -33px;
 }
 
 @media only screen and (max-width: 800px) {

@@ -60,6 +60,10 @@ function Detalle() {
                                 <h2>{detalle.peso}</h2>
                             </div>
                             <div>
+                                <b>ORIGEN: </b>
+                                <h2>{detalle.create===true ? "creado" : "original"}</h2>
+                            </div>
+                            <div>
                                 <b>TIPO: </b>
                                 {detalle.tipo?.map((e) => (
                                     <h2 key={e}>{" " + e + ""}</h2>

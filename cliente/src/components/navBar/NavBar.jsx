@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import "./NavBar.css";
 import logo from './pokebola.png'
+import { Link } from "react-router-dom";
 
 function Navbar() {
     const navRef = useRef("");
@@ -9,11 +10,11 @@ function Navbar() {
     };
     return (
         <header>
-            <img src={logo} alt="LOGO" />
+            <Link to="/">
+                <img src={logo} alt="LOGO" />
+            </Link>
             <nav ref={navRef}>
-                <a href="/#">Home</a>
-                <a href="/#">Crear</a>
-                <a href="/#">Blog</a>
+                <Link to="/create">nuevo pokemon</Link>
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     x
                 </button>

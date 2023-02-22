@@ -23,10 +23,12 @@ const apiInfo = async () => {
             create: e.create,
         };
     });
-    const api = (await axios.get("https://pokeapi.co/api/v2/pokemon?limit=200"))
-        .data.results;
+    const urlApi = "https://pokeapi.co/api/v2/pokemon?limit=100";
+    const api = await axios.get(urlApi);
+    const api2 = await axios.get(api.data.next);
+    const sumaApi = await api.data.results.concat(api2.data.results)
     const urls = [];
-    api.forEach((element) => {
+    sumaApi.forEach((element) => {
         urls.push(axios.get(element.url).then((response) => response.data));
     });
     const data = Promise.all(urls).then((response) =>
@@ -80,18 +82,22 @@ const getPokemonNameByApi = async (name) => {
         const pokemon = await axios.get(
             `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase().trim()}`
         );
-        const pokeApi = [{
-            id: pokemon.data.id,
-            imagen: pokemon.data.sprites.other["official-artwork"].front_default,
-            nombre: pokemon.data.name,
-            tipo: pokemon.data.types.map((t) => t.type.name),
-            vida: pokemon.data.stats[0].base_stat,
-            ataque: pokemon.data.stats[1].base_stat,
-            defensa: pokemon.data.stats[2].base_stat,
-            velocidad: pokemon.data.stats[5].base_stat,
-            altura: pokemon.data.height,
-            peso: pokemon.data.weight,
-        }];
+        const pokeApi = [
+            {
+                id: pokemon.data.id,
+                imagen: pokemon.data.sprites.other["official-artwork"]
+                    .front_default,
+                nombre: pokemon.data.name,
+                tipo: pokemon.data.types.map((t) => t.type.name),
+                vida: pokemon.data.stats[0].base_stat,
+                ataque: pokemon.data.stats[1].base_stat,
+                defensa: pokemon.data.stats[2].base_stat,
+                velocidad: pokemon.data.stats[5].base_stat,
+                altura: pokemon.data.height,
+                peso: pokemon.data.weight,
+                create:false
+            },
+        ];
         return pokeApi;
     }
 };
