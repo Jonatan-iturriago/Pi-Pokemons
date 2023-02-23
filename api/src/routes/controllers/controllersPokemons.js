@@ -23,7 +23,8 @@ const apiInfo = async () => {
             create: e.create,
         };
     });
-    const urlApi = "https://pokeapi.co/api/v2/pokemon";
+    const urlApi =
+        "https://pokeapi.co/api/v2/pokemon";
     const api = await axios.get(urlApi);
     const api2 = await axios.get(api.data.next);
     const sumaApi = await api.data.results.concat(api2.data.results)

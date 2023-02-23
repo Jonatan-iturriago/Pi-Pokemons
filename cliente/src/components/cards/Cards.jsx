@@ -19,6 +19,7 @@ function Cards() {
     const origen = useSelector((state) => state.origen);
     const setPage = useSelector((state) => state.setPage);
     const tipoFiltro = useSelector((state) => state.tipoFiltro);
+    const loading = useSelector((state) => state.loading);
     const orden = useSelector((state) => state.orden);
     const nuevaListaFiltrada = filtroPokemon(
         origen,
@@ -54,7 +55,9 @@ function Cards() {
                 <Ordenamiento />
             </div>
             <div className={style.contenido}>
-                {nuevaListaFiltrada.length ? (
+                {loading ? (
+                    <Loading />
+                ) : nuevaListaFiltrada.length ? (
                     nuevaListaFiltrada
                         .map((el) => {
                             return (
@@ -73,8 +76,8 @@ function Cards() {
                 )}
             </div>
             <br />
-                <Paginado pokemonPage={12} totalPokemon={totalPokemon} />
-            <Loading />
+            <Paginado pokemonPage={12} totalPokemon={totalPokemon} />
+
         </>
     );
 }

@@ -63,11 +63,7 @@ export const filtroPokemon = (origen, lista, tipoFiltro, orden) => {
             }
             return 0;
         });
-    }
-    
-    
-    
-    
+    }  
     return nueva;
 };
 
