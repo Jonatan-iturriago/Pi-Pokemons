@@ -7,7 +7,7 @@ function Error() {
   return (
       <div className="container">
       <div className="card">
-        <h2 className="titulo"> NO SE ENCONTRO NADA </h2>
+        <h2 className="titulo"> NO SE ENCONTRO COINCIDENCIA </h2>
         <img src={pika} alt="imagen" />
       </div>
       </div>

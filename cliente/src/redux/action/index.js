@@ -30,12 +30,13 @@ export const clear = () => {
     };
 };
 
-export const getPokeByName = (name) => {
+export const getPokeByName = (name,alter) => {
     return async function (dispatch) {
         try {
             const json = await axios.get(
                 `http://localhost:3001/pokemon?name=${name}`
             );
+            alter()
             return dispatch({
                 type: SEARCH,
                 payload: json.data,
@@ -86,7 +87,7 @@ export const getTipoPokemon = () => {
                 payload: json.data,
             });
         } catch (error) {
-            alert("el tipo buscado no existe intente con otro");
+            alert(error.message);
         }
     };
 };
@@ -116,14 +117,10 @@ export const filterOrigen = (payload) => {
 };
 
 export const filterTipo = (payload) => {
-    try {
         return {
             type: SET_TIPOFILTRO,
             payload,
         };
-    } catch (error) {
-        alert("el nombre tipo no existe intente con otro");
-    }
 };
 
 export const filterOrden = (payload) => {

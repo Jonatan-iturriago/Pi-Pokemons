@@ -15,12 +15,3 @@
     gap: 3rem;
 }
 
-/* @media only screen and (max-width: 800px) {
-    .contenido {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100%));
-            border-radius: 10px;
-            flex-wrap: wrap;
-            gap: 5rem;
-        }
-    } */

@@ -4,8 +4,10 @@
 }
 
 .paginas ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0.5px,0.5fr));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     border-radius: 1px;
     flex-wrap: wrap;
     list-style: none;

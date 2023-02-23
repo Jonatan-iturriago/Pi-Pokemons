@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemon, showLoading, hideLoading } from "../../redux/action/index";
+import { getPokemon, showLoading, hideLoading,} from "../../redux/action/index";
 import Card from "../card/Card";
 import style from "./Cards.module.css";
 import NavBar from "../navBar/NavBar";
@@ -30,9 +30,12 @@ function Cards() {
     const lastIndex = setPage * 12;
     const firstIndex = lastIndex - 12;
 
+    useEffect(()=>{
+        dispatch(getPokemon());
+    }, [dispatch])
+    
     useEffect(() => {
         dispatch(showLoading());
-        dispatch(getPokemon());
         setTimeout(() => {
             dispatch(hideLoading());
         }, 5000);
@@ -41,13 +44,15 @@ function Cards() {
     return (
         <>
             <NavBar />
+            <br />
+            <Search />
+            <Paginado pokemonPage={12} totalPokemon={totalPokemon} />
+            <br />
             <div className={style.filtros}>
                 <FiltrosTipos />
                 <FiltrosCreate />
                 <Ordenamiento />
-                <Search />
             </div>
-            <Paginado pokemonPage={12} totalPokemon = {totalPokemon} />
             <div className={style.contenido}>
                 {nuevaListaFiltrada.length ? (
                     nuevaListaFiltrada
@@ -67,6 +72,8 @@ function Cards() {
                     <Error />
                 )}
             </div>
+            <br />
+                <Paginado pokemonPage={12} totalPokemon={totalPokemon} />
             <Loading />
         </>
     );

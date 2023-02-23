@@ -90,7 +90,6 @@ const postPokemon = async (req, res) => {
             !velocidad ||
             !altura ||
             !peso ||
-            !create ||
             !tipo
         ) {
             res.status(404).json({

@@ -13,7 +13,9 @@ function Search() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(getPokeByName(name));
+        dispatch(getPokeByName(name,()=>
+            setName("")
+        ));
         dispatch(setCurrentPage(1))
         dispatch(resetFiltros())
     }
