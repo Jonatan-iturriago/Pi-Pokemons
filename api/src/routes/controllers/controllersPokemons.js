@@ -121,7 +121,8 @@ const searchUserById = async (id) => {
 
 const getByIdDB = async (id) => {
     const database = await Pokemon.findOne({
-        id: id,
+        where:
+            {id: id},
         include: {
             model: Type,
             attributes: ["name"],
