@@ -5,7 +5,7 @@ import Detalle from './components/detalle/Detalle';
 import Landing from './components/Landing/Landing';
 import PokemonCreate from './components/create/PokemonCreate';
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://pi-pokemons-production-f9f5.up.railway.app";
 function App() {
   return (
     <div className="App">
