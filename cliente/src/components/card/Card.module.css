@@ -1,4 +1,4 @@
-.container {
+/* .container {
     width: 25%;
     height: 420px;
     display: inline-block;
@@ -122,4 +122,161 @@ img {
     margin-bottom: 25px;
 }
 }
+ */
 
+.container {
+    width: 25%;
+    height: 420px;
+    display: inline-block;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+.card {
+    width: 330px;
+    height: 420px;
+    border-radius: 6px;
+    background-color: #1768d2cb;
+    border: 2px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+}
+
+img {
+    width: 321px;
+    height: 231px;
+}
+
+.titulo {
+    height: 30px;
+    width: auto;
+    color: white;
+    margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 800px){
+.container {
+    width: 25%;
+    height: 420px;
+    display: inline-block;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+.card {
+    width: 330px;
+    height: 420px;
+    border-radius: 6px;
+    background-color: #1768d2cb;
+    border: 2px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+}
+
+img {
+    width: 321px;
+    height: 231px;
+}
+
+.titulo {
+    height: 30px;
+    width: auto;
+    color: white;
+    margin-bottom: 35px;
+}
+}
+
+
+@media only screen and (max-width: 540px){
+    .container {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    justify-content: center;
+    margin: 15px;
+    gap: 1rem;
+
+}
+    .card {
+    width: 300px;
+    height: 340px;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 1px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 4px;
+    text-align: center;
+    left: -50px;
+    
+}
+
+img {
+    top: -20px;
+    width: 150px;
+    height: 150px;
+}
+
+.titulo {
+    height: 20px;
+    width: auto;
+    color: white;
+    margin-bottom: 25px;
+}
+}
+@media only screen and (max-width: 375px){
+    .card {
+    width: 320px;
+    height: 350px;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 1px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 4px;
+    text-align: center;
+}
+
+img {
+    width: 101px;
+    height: 101px;
+}
+
+.titulo {
+    height: 20px;
+    width: auto;
+    color: white;
+    margin-bottom: 25px;
+}
+}
+@media only screen and (max-width: 375px){
+    .card {
+    width: 250px;
+    height: 260px;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 1px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 2px;
+    text-align: center;
+}
+
+img {
+    width: 101px;
+    height: 131px;
+}
+
+.titulo {
+    height: 20px;
+    width: auto;
+    color: white;
+    margin-bottom: 25px;
+}
+}
