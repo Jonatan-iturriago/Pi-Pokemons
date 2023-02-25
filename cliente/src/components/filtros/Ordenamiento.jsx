@@ -14,7 +14,7 @@ function Ordenamiento() {
 
     return (
         <div>
-            <h4>ORDENAR </h4>
+            <h4>ORDEN A-Z & ATAQUE </h4>
             <select onChange={(e) => handleOrderAtaque(e)}
                 value={orden}
             >

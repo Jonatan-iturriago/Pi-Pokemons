@@ -32,3 +32,131 @@ img {
     color: white;
     margin-bottom: 35px;
 }
+
+@media only screen and (max-width: 375px){
+    .container {
+    width: 25%;
+    height: 25%px;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+    gap: 2rem;
+
+}
+    .card {
+    width: 320px;
+    height: 350px;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 1px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 4px;
+    text-align: center;
+}
+.pik{
+    width: 241;
+    height: 241;
+
+}
+.pik img {
+    top: 15px;
+    width: 241px;
+    height: 241px;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    height: 60px;
+    width: auto;
+    color: white;
+    margin-bottom: 25px;
+}
+}
+
+
+@media only screen and (max-width: 412px){
+    .container {
+    width: 25%;
+    height: 25%px;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+    margin: 15px;
+    gap: 2rem;
+
+}
+    .card {
+    width: 320px;
+    height: 350px;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 1px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 4px;
+    text-align: center;
+}
+.pik{
+    width: 241;
+    height: 241;
+
+}
+.pik img {
+    top: 15px;
+    width: 241px;
+    height: 241px;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    height: 80px;
+    width: auto;
+    color: white;
+    margin-bottom: 25px;
+}
+}
+
+@media only screen and (max-width: 540px){
+   .container {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    justify-content: center;
+    margin: 15px;
+    position:relative;
+
+    
+    gap: 10rem;
+
+}
+    .card {
+    width: 300px;
+    height: 340px;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 1px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 4px;
+    text-align: center;
+    left: -50px;
+    
+}
+
+img {
+    top: -20px;
+    width: 150px;
+    height: 150px;
+}
+
+.titulo {
+    height: 20px;
+    width: auto;
+    color: white;
+    margin-bottom: 25px;
+}
+}

@@ -1,21 +1,31 @@
-.form {
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    height: max-content;
-    color: rgb(246, 255, 78);
-}
-
 .conteiner {
     flex-wrap: wrap;
-    width: 500px; /* para darle un ancho al formulario */
+    top: 40px;
+    width: 700px; /* para darle un ancho al formulario */
+    min-height: 424px;
     margin: 0 auto; /* para centrarlo en la página */
     padding: 20px; /* para darle un poco de espacio alrededor */
-    background-color: rgba(5, 3, 60, 0.674);
+    min-height: 625px;
+    transform: translatex(0px) translatey(0px);
     text-decoration: none;
+    gap: 2rem;
+}
+form {
+    top:100px;
+    height: 852px;
+    width: 402px; /* para darle un ancho al formulario */
 }
 
+.secun {
+    position: relative;
+    top: 189px;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 220px;
+    /* background-color: rgba(244, 5, 5, 0.581); */
+    background-color: #1768d2cb;
+    min-height: 119px;
+}
 .typesSelect {
     display: flex;
     flex-direction: row;
@@ -52,72 +62,123 @@
     background-color: rgba(48, 30, 9, 0.897);
 }
 
-.titulo {
-    display: block;
-    margin-bottom: 10px;
-    background-color: rgb(59, 124, 231);
-}
 .tipos {
     width: 95%;
     padding: 10px;
     margin-bottom: 220px;
-    background-color: rgba(244, 5, 5, 0.581);
+    /* background-color: rgba(244, 5, 5, 0.581); */
+    background-color: #1768d2cb;
+}
+.tipos select{
+    cursor: pointer;
 }
 
 .input {
     width: 95%;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: rgba(154, 152, 152, 0.485);
+    /* background-color: rgba(154, 152, 152, 0.485); */
+    background-color: #1768d2cb;
+}
+.input p {
+    color: red;
 }
 .atributos {
     width: 95%;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: rgba(154, 152, 152, 0.485);
+    background-color: #1768d2cb;
+}
+.atributos p {
+    color: red;
 }
 
+.atributos2 p {
+    color: red;
+}
 .atributos2 {
     width: 95%;
     padding: 10px;
     margin-bottom: 20px;
-    background-color: rgba(154, 152, 152, 0.485);
+    /* background-color: rgba(154, 152, 152, 0.485); */
+    background-color: #1768d2cb;
 }
 
 .input {
     border: 1px solid rgb(170, 159, 159);
 }
 
-.back-button {
-    background-color: rgb(141, 143, 144);
-    color: rgb(251, 251, 251);
-    padding: 4px 8px;
-    border-radius: 4px;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.back-button svg {
-    margin-right: 8px;
-    fill: #fff;
-    text-decoration: none;
-    color: white;
-}
-
-.back-button:hover {
-    background-color: #444;
-}
-
 .btnCrear {
+    position: relative;
+    top: -189px;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 220px;
+    /* background-color: rgba(244, 5, 5, 0.581); */
+    background-color: #1768d2cb;
+    min-height: 119px;
+}
+
+.btnCrear p {
+    position: relative;
+    top: 45px;
+}
+.btnCrear button {
     width: 100%;
-    padding: 11px;
-    margin-bottom: 20px;
-    background-color: rgba(154, 152, 152, 0.485);
-     position:relative;
- top:-156px;
+    height: 40%;
+    padding: 10px;
+}
+
+.btnCrear button:hover {
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.form .secun{
+ top:12px;
+}
+
+/* Input */
+.form .input{
+ position:relative;
+ top:-200px;
+}
+
+/* Atributos */
+ .form .atributos{
+ position:relative;
+ top:-200px;
+}
+
+/* Atributos2 */
+ .form .atributos2{
+ position:relative;
+ top:-200px;
+}
+
+/* Tipos */
+ .form .tipos{
+ position:relative;
+ top:-200px;
+}
+
+/* Crear */
+.form .btnCrear{
+ top:-400px;
+}
+
+.form .secun h2{
+ position:relative;
+ top:25px;
+}
+
+/* Button */
+.secun  button{
+ position:relative;
+ left:-160px;
+ cursor: pointer;
+}
+
+.secun  button:hover{
+    background-color: blueviolet;
 }

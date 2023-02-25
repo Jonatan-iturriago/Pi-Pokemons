@@ -75,35 +75,43 @@
     top: -33px;
 }
 
-@media only screen and (max-width: 800px) {
-.gr{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    border-radius: 10px;
-    flex-wrap: wrap;
+
+@media only screen and (max-width: 912px){
+    .gr{
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
 }
 .card {
-    width: 450px;
-    height: 1010px;
-    border-radius: 6px;
+    width: 52%;
+    height: 92%;
+    border-radius: 3px;
     background-color: #1768d2cb;
     border: 2px solid rgb(189, 131, 233);
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    margin: 20px;
+    margin: 1px;
     position:relative;
-    left:-3px;
+    left:250px;
 }
 .card button{
     transform: translatex(222px) translatey(0px);
         position: relative;
         top: 4px;
-        left: -2px;
+       left:-136px;
         bottom: 12px;
         right: -4px;
-        color: red;
+        color: rgb(134, 211, 82);
 }
 
+.imagen{
+    align-content: flex-end;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left:-210px;
+    top: 8px;
+}
 .details {
     margin: auto;
     margin-top: 3rem;
@@ -112,8 +120,8 @@
 }
 
 .head {
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 
 .head img {
@@ -123,7 +131,58 @@
 }
 .head div img{
  position:relative;
- top:-41px;
+ top:-61px;
+}
+
+
+
+.texto div h2 {
+    min-height:42px;
+    width:174px;
+    position: relative;
+    top: -69px;
+    left: 210px;
+    font-size: 16px;
+}
+
+/* Bold Tag */
+.texto div b {
+    position: relative;
+    top: -49px;
+    width: 25px;
+    height: 25px;
+    left:-110px;
+    font-size: 16px;
+}
+}
+
+
+@media only screen and (max-width: 540px) {
+   .gr{
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+.card {
+    width: 92%;
+    height: 92%;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 2px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 1px;
+    position:relative;
+    left:14px;
+}
+.card button{
+    transform: translatex(222px) translatey(0px);
+        position: relative;
+        top: 4px;
+       left:-136px;
+        bottom: 12px;
+        right: -4px;
+        color: rgb(134, 211, 82);
 }
 
 .imagen{
@@ -131,22 +190,129 @@
     height: 20px;
     width: 20px;
     position: relative;
-    left: 210px;
+    left:-220px;
     top: 8px;
 }
+.details {
+    margin: auto;
+    margin-top: 3rem;
+    display: grid;
+    color: white;
+}
+
+.head {
+    align-items: center;
+    justify-content: center;
+}
+
+.head img {
+    width: 181px;
+    height: 181px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 50%);
+}
+.head div img{
+ position:relative;
+ top:-61px;
+}
+
+
 
 .texto div h2 {
+    min-height:42px;
+    width:174px;
     position: relative;
-    top: -4px;
-    left: 156px;
-    width: 66%;
-    height: 54px;
+    top: -60px;
+     left:170px;
+    font-size: 16px;
 }
 
 /* Bold Tag */
 .texto div b {
     position: relative;
-    left: -148px;
-    top: 25px;
+    top: -40px;
+    width: 25px;
+    height: 25px;
+    left:-100px;
+    font-size: 16px;
+}
+}
+
+
+@media only screen and (max-width: 412px){
+    .gr{
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+.card {
+    width: 92%;
+    height: 92%;
+    border-radius: 3px;
+    background-color: #1768d2cb;
+    border: 2px solid rgb(189, 131, 233);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 1px;
+    position:relative;
+    left:14px;
+}
+.card button{
+    transform: translatex(222px) translatey(0px);
+        position: relative;
+        top: 4px;
+       left:-136px;
+        bottom: 12px;
+        right: -4px;
+        color: rgb(134, 211, 82);
+}
+
+.imagen{
+    align-content: flex-end;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left:-160px;
+    top: 8px;
+}
+.details {
+    margin: auto;
+    margin-top: 3rem;
+    display: grid;
+    color: white;
+}
+
+.head {
+    align-items: center;
+    justify-content: center;
+}
+
+.head img {
+    width: 151px;
+    height: 151px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 50%);
+}
+.head div img{
+ position:relative;
+ top:-61px;
+}
+
+
+
+.texto div h2 {
+    min-height:42px;
+    width:154px;
+    position: relative;
+    top: -69px;
+    font-size: 12px;
+}
+
+/* Bold Tag */
+.texto div b {
+    position: relative;
+    top: -49px;
+    width: 25px;
+    height: 25px;
+    left:-81px;
+    font-size: 10px;
 }
 }

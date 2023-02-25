@@ -4,7 +4,6 @@ import Home from './view/home/Home';
 import Detalle from './components/detalle/Detalle';
 import Landing from './components/Landing/Landing';
 import PokemonCreate from './components/create/PokemonCreate';
-
 function App() {
   return (
     <div className="App">

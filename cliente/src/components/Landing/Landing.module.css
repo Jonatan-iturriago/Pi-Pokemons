@@ -29,21 +29,3 @@
     background: var(--color-primary-500);
     color: #000;
 }
-
-/* .welcometitle,
-.welcomesubtitle {
-    font-family: 'Lato', sans-serif;
-    background-color: rgba(0, 0, 0, 0.766);
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    padding-bottom: 20px;
-}
-
-.welcometitle {
-    font-size: 68px;
-}
-
-.welcomesubtitle {
-    font-size: 24px;
-} */

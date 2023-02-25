@@ -32,7 +32,7 @@ function Paginado({ pokemonPage, totalPokemon }) {
                                 disabled={setPage === 1 ? true : false}
                                 onClick={prevPage}
                             >
-                                Previous
+                                back
                             </button>
                         </div>
                         {numeroPagina.map((Pag) => (
@@ -51,7 +51,7 @@ function Paginado({ pokemonPage, totalPokemon }) {
                                 }
                                 onClick={nextPage}
                             >
-                                Next page
+                                Next
                             </button>
                         </div>
                     </ul>

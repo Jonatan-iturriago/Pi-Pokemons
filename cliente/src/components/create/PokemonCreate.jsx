@@ -110,7 +110,8 @@ export default function CreatePokemon() {
             if (pokeValidar.defensa > 255) {
                 validError.defensa = "La defensa no puede ser mayora a 255";
             } else if (pokeValidar.defensa < 1) {
-                validError.defensa = "Tiene que ser mayor a 1 el nivel de defensa ";
+                validError.defensa =
+                    "Tiene que ser mayor a 1 el nivel de defensa ";
             }
         }
         if (!pokeValidar.velocidad) {
@@ -119,7 +120,8 @@ export default function CreatePokemon() {
             if (pokeValidar.velocidad > 255) {
                 validError.velocidad = "La velocidad no puede ser mayora a 255";
             } else if (pokeValidar.velocidad < 1) {
-                validError.velocidad = "Debe ser mayor a 1 el rango de velocidad";
+                validError.velocidad =
+                    "Debe ser mayor a 1 el rango de velocidad";
             }
         }
         if (!pokeValidar.vida) {
@@ -135,7 +137,7 @@ export default function CreatePokemon() {
             validError.altura = "debe elegir una altura ";
         } else {
             if (pokeValidar.altura > 40) {
-                validError.altura = "La altura no puede superar los 40 metros";
+                validError.altura = "La altura no puede superar los 40 Mtr";
             } else if (pokeValidar.altura < 1) {
                 validError.altura = "la altura debe ser mayor o igual a 1Mtr";
             }
@@ -144,9 +146,9 @@ export default function CreatePokemon() {
             validError.peso = "Algo esta mal ...";
         } else {
             if (pokeValidar.peso > 1000) {
-                validError.peso = "El peso no puede ser superior a 1000";
+                validError.peso = "El peso no puede ser superior a 1000kg";
             } else if (pokeValidar.peso < 1) {
-                validError.peso = "Algo esta mal ...";
+                validError.peso = "el peso debe ser mayor a 1kg";
             }
         }
         // if (pokeValidar.imagen) {
@@ -191,182 +193,167 @@ export default function CreatePokemon() {
     };
 
     return (
-        <div className="form">
-            <div className="container">
-                <h2>¡Create your Pokemon!</h2>
-                <form onSubmit={(e) => handleSubmit(e)} className="form">
-                    <div className="input">
-                        <label>Nombre: </label>
+        <div className="container">
+            <form onSubmit={(e) => handleSubmit(e)} className="form">
+                <div className="secun">
+                    <Link to="/home">
+                        <button>Volver</button>
+                    </Link>
+                    <h2>¡Crear Pokemon!</h2>
+                </div>
+                <div className="input">
+                    <label>Nombre: </label>
+                    <input
+                        type={"text"}
+                        placeholder={"Give it a name!"}
+                        name="nombre"
+                        value={input.nombre}
+                        onChange={(e) => handleOnChange(e)}
+                    />
+                    <p>{error.nombre}</p>
+                </div>
+                <div className="input">
+                    <label>Imagen: </label>
+                    <label>
                         <input
-                            type={"text"}
-                            placeholder={"Give it a name!"}
-                            name="nombre"
-                            value={input.nombre}
+                            type="url"
+                            placeholder={"Put a url!"}
+                            name={"imagen"}
+                            value={input.imagen}
                             onChange={(e) => handleOnChange(e)}
                         />
-                        <p>{error.nombre}</p>
-                    </div>
-                    <div className="input">
-                        <label>Imagen: </label>
-                        <label>
-                            <input
-                                type="url"
-                                placeholder={"Put a url!"}
-                                name={"imagen"}
-                                value={input.imagen}
-                                onChange={(e) => handleOnChange(e)}
-                            />
-                        </label>
-                        <p>{error.imagen}</p>
+                    </label>
+                    <p>{error.imagen}</p>
+                </div>
+                <div className="atributos">
+                    <label>Ataque: </label>
+                    <input
+                        type={"range"}
+                        min="0"
+                        max="256"
+                        name={"ataque"}
+                        value={input.ataque}
+                        onChange={(e) => handleOnChange(e)}
+                    />
+                    <b>{input.ataque}</b>
+                    <p>{error.ataque}</p>
 
-                    </div>
-                    <div className="atributos">
-                        <label>Ataque: </label>
-                        <input
-                            type={"range"}
-                            min="0"
-                            max="256"
-                            name={"ataque"}
-                            value={input.ataque}
-                            onChange={(e) => handleOnChange(e)}
-                        />
-                        <p>{input.ataque}</p>
-                        <p>{error.ataque}</p>
+                    <label>Defensa: </label>
+                    <input
+                        type="range"
+                        min="0"
+                        max="256"
+                        name="defensa"
+                        value={input.defensa}
+                        onChange={(e) => handleOnChange(e)}
+                    />
+                    <b>{input.defensa}</b>
+                    <p>{error.defensa}</p>
 
-                        
-                        <label>Defensa: </label>
+                    <label>Velocidad: </label>
+
+                    <input
+                        type="range"
+                        min="0"
+                        max="256"
+                        name="velocidad"
+                        value={input.velocidad}
+                        onChange={(e) => handleOnChange(e)}
+                    />
+                    <b>{input.velocidad}</b>
+                    <p>{error.velocidad}</p>
+                </div>
+
+                <div className="atributos2">
+                    <label>Vida: </label>
+                    <input
+                        type="range"
+                        min="0"
+                        max="256"
+                        name="vida"
+                        value={input.vida}
+                        onChange={(e) => handleOnChange(e)}
+                    />
+                    <b>{input.vida}</b>
+                    <p>{error.vida}</p>
+
+                    <label>Peso: </label>
+                    <label>
                         <input
                             type="range"
-                            min="0"
-                            max="256"
-                            name="defensa"
-                            value={input.defensa}
+                            placeholder={" 1 - 1000"}
+                            min="1"
+                            max="255"
+                            name={"peso"}
+                            value={input.peso}
                             onChange={(e) => handleOnChange(e)}
                         />
-                        <p>{input.defensa}</p>
-                        <p>{error.defensa}</p>
+                        <b>{input.peso} kg</b>
+                    </label>
+                    <p>{error.peso}</p>
 
-                        
-                        <label>Velocidad: </label>
-
+                    <label>Altura: </label>
+                    <label>
                         <input
                             type="range"
-                            min="0"
-                            max="256"
-                            name="velocidad"
-                            value={input.velocidad}
+                            placeholder={" 1 - 1000"}
+                            min="1"
+                            max="43"
+                            name={"altura"}
+                            value={input.altura}
                             onChange={(e) => handleOnChange(e)}
                         />
-                        <p>{input.velocidad}</p>
-                        <p>{error.velocidad}</p>
-                    </div>
+                        <b>{input.altura} kg</b>
+                    </label>
+                    <p>{error.altura}</p>
+                </div>
+                <div className="tipos">
+                    <label>Tipos: </label>
 
-                    <div className="atributos2">
-                        <label>Vida: </label>
-                        <input
-                            type="range"
-                            min="0"
-                            max="256"
-                            name="vida"
-                            value={input.vida}
-                            onChange={(e) => handleOnChange(e)}
-                        />
-                        <p>{input.vida}</p>
-                        <p>{error.vida}</p>
-
-                        
-                        <label>Peso: </label>
-                        <label>
-                            <input
-                                type="range"
-                                placeholder={" 1 - 1000"}
-                                min="1"
-                                max="255"
-                                name={"peso"}
-                                value={input.peso}
-                                onChange={(e) => handleOnChange(e)}
-                            />
-                            <p>{input.peso} kg</p>
-                        </label>
-                        <p>{error.peso}</p>
-
-                        <label>Altura: </label>
-                        <label>
-                            <input
-                                type="range"
-                                placeholder={" 1 - 1000"}
-                                min="1"
-                                max="255"
-                                name={"altura"}
-                                value={input.altura}
-                                onChange={(e) => handleOnChange(e)}
-                            />
-                            <p>{input.altura} kg</p>
-                        </label>
-                        <p>{error.altura}</p>
-
-                    </div>
-                    <div className="tipos">
-                        <label>Tipos: </label>
-
-                        <select onChange={(e) => handletipo(e)}>
-                            {type?.map((ty,index) => {
-                                return (
-                                    <option key={index} name={ty.name} value={ty.name}>
-                                        {ty.name}
-                                    </option>
-                                );
-                            })}
-                        </select>
-                        {input.tipo?.map((e) => {
+                    <select onChange={(e) => handletipo(e)}>
+                        {type?.map((ty, index) => {
                             return (
-                                <div className="tipoSelect" key={e}>
-                                    <p className="ptipo">{e} ✅</p>
-                                    {
-                                        <button
-                                            className="btnDelete"
-                                            onClick={() => {
-                                                handleDelete(e);
-                                            }}
-                                        >
-                                            x
-                                        </button>
-                                    }
-                                </div>
+                                <option
+                                    key={index}
+                                    name={ty.name}
+                                    value={ty.name}
+                                >
+                                    {ty.name}
+                                </option>
                             );
                         })}
-                        <p>{input.tipo.length >= 2 ? error.tipo : ""}</p>
-                        <p>
-                            {input.tipo.length === 1
-                                ? "Puedes agregar 1 mas si quieres!"
-                                : ""}
-                        </p>
-                    </div>
-                    <div className="btnCrear">
-                        <button
-                            disabled={!disEna && "disabled"}
-                            type={"submit"}
-                        >
-                            Create now!
-                        </button>
-                        {!disEna ? <p>Check all fields</p> : <p></p>}
-                        <button class="back-button">
-                            <Link className="back-button" to="/home">
+                    </select>
+                    {input.tipo?.map((e) => {
+                        return (
+                            <div className="tipoSelect" key={e}>
+                                <p className="ptipo">{e} ✅</p>
                                 {
-                                    <svg
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
+                                    <button
+                                        className="btnDelete"
+                                        onClick={() => {
+                                            handleDelete(e);
+                                        }}
                                     >
-                                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
-                                    </svg>
+                                        x
+                                    </button>
                                 }
-                                🔙
-                            </Link>
-                        </button>
-                    </div>
-                </form>
-            </div>
+                            </div>
+                        );
+                    })}
+                    <p>{input.tipo.length >= 2 ? error.tipo : ""}</p>
+                    <p>
+                        {input.tipo.length === 1
+                            ? "Puedes agregar 1 mas si quieres!"
+                            : ""}
+                    </p>
+                </div>
+                <div className="btnCrear">
+                    <button disabled={!disEna && "disabled"} type={"submit"}>
+                        CREAR
+                    </button>
+                    {disEna ? <p></p> : <p>FALTAN INFORMACION</p>}
+                </div>
+            </form>
         </div>
     );
 }

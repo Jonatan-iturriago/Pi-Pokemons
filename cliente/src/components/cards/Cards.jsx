@@ -42,11 +42,17 @@ function Cards() {
         }, 5000);
     }, [dispatch]);
 
+    const handleClick= (e) => {
+        dispatch(getPokemon())
+    }
     return (
         <>
             <NavBar />
             <br />
+            <div>
             <Search />
+            <button onClick={(e) => handleClick(e)}>RECARGAR</button>
+            </div>
             <Paginado pokemonPage={12} totalPokemon={totalPokemon} />
             <br />
             <div className={style.filtros}>
@@ -54,6 +60,7 @@ function Cards() {
                 <FiltrosCreate />
                 <Ordenamiento />
             </div>
+            <br />
             <div className={style.contenido}>
                 {loading ? (
                     <Loading />
@@ -77,7 +84,6 @@ function Cards() {
             </div>
             <br />
             <Paginado pokemonPage={12} totalPokemon={totalPokemon} />
-
         </>
     );
 }
