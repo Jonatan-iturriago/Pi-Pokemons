@@ -14,7 +14,9 @@ function Navbar() {
                 <img src={logo} alt="LOGO" />
             </Link>
             <nav ref={navRef}>
-                <Link to="/create">nuevo pokemon</Link>
+                <Link to="/create">
+                    <button>nuevo pokemon</button>
+                </Link>
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     x
                 </button>
