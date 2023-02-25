@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import gif from "./VAyR.gif"
+import gif from "./pokemon.gif"
 
 function Loading() {
     const loading = useSelector((state)=>state.loading)
