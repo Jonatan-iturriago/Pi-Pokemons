@@ -17,7 +17,7 @@ import axios from "axios";
 
 export const getPokemon = () => {
     return async function (dispatch) {
-        const json = await axios.get("http://localhost:3001/pokemon");
+        const json = await axios.get("/pokemon");
         return dispatch({
             type: ALLPOKEMONS,
             payload: json.data,
@@ -34,7 +34,7 @@ export const getPokeByName = (name,alter) => {
     return async function (dispatch) {
         try {
             const json = await axios.get(
-                `http://localhost:3001/pokemon?name=${name}`
+                `/pokemon?name=${name}`
             );
             alter()
             return dispatch({
@@ -53,7 +53,7 @@ export const getPokeByName = (name,alter) => {
 
 export const getPokemondetalle = (id) => {
     return async function (dispatch) {
-        const json = await axios.get(`http://localhost:3001/pokemon/${id}`);
+        const json = await axios.get(`/pokemon/${id}`);
         return dispatch({
             type: DETALLEPOKEMONS,
             payload: json.data,
@@ -81,7 +81,7 @@ export const hideLoading = () => (dispatch) => {
 export const getTipoPokemon = () => {
     return async function (dispatch) {
         try {
-            const json = await axios.get("http://localhost:3001/type");
+            const json = await axios.get("/type");
             return dispatch({
                 type: ALLTYPE,
                 payload: json.data,
@@ -98,7 +98,7 @@ export const postPokemon = (payload) => {
     return async () => {
         try {
             var createPoke = await axios.post(
-                "http://localhost:3001/pokemon",
+                "/pokemon",
                 payload
             );
             alert("el pokemon fue creado !");

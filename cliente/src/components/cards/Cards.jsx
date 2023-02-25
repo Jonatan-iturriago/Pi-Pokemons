@@ -39,7 +39,7 @@ function Cards() {
         dispatch(showLoading());
         setTimeout(() => {
             dispatch(hideLoading());
-        }, 5000);
+        }, 6000);
     }, [dispatch]);
 
     const handleClick= (e) => {
