@@ -85,6 +85,9 @@ export default function CreatePokemon() {
         if (!pokeValidar.nombre) {
             validError.nombre = "Se requiere un nombre";
         } else {
+            if (!/^[a-z]+$/.test(pokeValidar.nombre)) {
+                validError.nombre ="No se aceptan mayusculas "
+            }
             if (/\s/.test(pokeValidar.nombre)) {
                 validError.nombre = "No se permiten espacios";
             }
@@ -143,7 +146,7 @@ export default function CreatePokemon() {
             }
         }
         if (!pokeValidar.peso) {
-            validError.peso = "Algo esta mal ...";
+            validError.peso = "ingrese un  peso valido ";
         } else {
             if (pokeValidar.peso > 1000) {
                 validError.peso = "El peso no puede ser superior a 1000kg";

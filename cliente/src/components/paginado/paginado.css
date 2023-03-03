@@ -15,6 +15,7 @@
 }
 
 .paginas ul li button {
+    
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -32,6 +33,10 @@
     background: black;
 }
 
+.pagin{
+    background:black ;
+    color: white;
+}
 
 @media only screen and (max-width: 375px) {
     .paginas {
@@ -69,6 +74,10 @@
 }
 }
 
+.pagin{
+    background:black ;
+    color: white;
+}
 
 @media only screen and (max-width: 540px) {
     .paginas {
@@ -103,5 +112,9 @@
 .paginas ul li button:hover {
     color: white;
     background: black;
+}
+.pagin{
+    background:black ;
+    color: white;
 }
 }

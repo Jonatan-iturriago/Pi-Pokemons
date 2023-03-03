@@ -37,7 +37,11 @@ function Paginado({ pokemonPage, totalPokemon }) {
                         </div>
                         {numeroPagina.map((Pag) => (
                             <li key={Pag}>
-                                <button onClick={() => specifPage(Pag)}>
+                                <button
+                                    onClick={() => specifPage(Pag)}
+                                    className={setPage === Pag ? "pagin" : ""}
+                                    
+                                >
                                     {Pag}
                                 </button>
                             </li>

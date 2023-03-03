@@ -11,6 +11,7 @@
     gap: 2rem;
 }
 form {
+    
     top:100px;
     height: 852px;
     width: 402px; /* para darle un ancho al formulario */
